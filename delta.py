@@ -80,8 +80,8 @@ action = ActionChains(driver)
 
 driver.get("https://www.delta.com/apac/en")
 time.sleep(10)
-a=driver.find_element_by_xpath("//span[@class='airport-code d-block'][1]").click()
-print(a)
+driver.find_element_by_xpath("//span[@class='airport-code d-block'][1]").click()
+
 time.sleep(5)
 driver.find_element_by_xpath("//input[@aria-invalid='false'][contains(@id,'input')]").send_keys("SEA")
 time.sleep(1)
@@ -95,16 +95,27 @@ driver.find_element_by_xpath("//input[@aria-invalid='false'][contains(@id,'input
 time.sleep(1)
 driver.find_element_by_xpath("//input[@aria-invalid='false'][contains(@id,'input')]").send_keys(Keys.ENTER)
 
+time.sleep(1)
+
 driver.find_element_by_xpath("//span[contains(@id,'selectTripType-val')]").click()
+time.sleep(1)
 driver.find_element_by_xpath("//li[contains(@id,'ui-list-selectTripType1')]").click()
+time.sleep(1)
+driver.find_element_by_xpath("//div[contains(@class,'calDispValueCont icon-Calendar  ')]").click()
+time.sleep(1)
+driver.find_element_by_xpath("//a[contains(@aria-label,'23 November 2021, Tuesday')]").click()
+driver.find_element_by_xpath("//button[@type='button'][contains(.,'done')]").click()
 
-time.sleep(5)
+driver.find_element_by_xpath("//button[contains(@id,'btn-book-submit')]").click()
+time.sleep(10)
 
 
+'''
 
 driver.find_element_by_xpath("//span[contains(@class,'calenderDepartSpan')]").send_keys("10-01-2021")
 driver.find_element_by_xpath("//span[contains(@class,'calenderDepartSpan')]").send_keys(Keys.ENTER)
 
+'''
 '''
 driver.find_element_by_xpath("//input[contains(@type,'email')]").send_keys(Keys.ENTER)
 
